@@ -1,2 +1,13 @@
-<h1>Bienvenue sur le post n°<?=$params['id']?></h1>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae reprehenderit corporis quas ex ad iusto nihil eligendi error suscipit? Accusantium, ipsum nobis. Suscipit possimus laboriosam sit deleniti, dignissimos consequuntur inventore.</p>
+<?php
+
+    if (!isset($params)) {
+        header('Location:/');
+    }else{
+        ?>
+            <div class="article-display">
+                <h1><?= $params['title']; ?></h1>
+                <?=$params['content'];?>
+            </div>
+        <?php
+    }
+

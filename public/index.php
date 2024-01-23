@@ -17,14 +17,17 @@
     $router = new Router();
 
     $router->register('/',['Controllers\HomeController','index']);
-    $router->register('/posts',['Controllers\PostController','post']);
+    $router->register('/posts',['Controllers\PostController','index']);
     $router->register('/show',['Controllers\PostController','show']);
+    $router->register('/teaching',['Controllers\TeachingController','index']);
+    $router->register('/about',['Controllers\AboutController','index']);
+
 
     $request = new Request($_SERVER['REQUEST_URI']);
 
     try
     {
-        echo $router->resolve($request->getPath(),$request->getParams());
+        $router->resolve($request->getPath(),$request->getParams());
     }
     catch(RouteNotFoundException $e)
     {

@@ -4,10 +4,15 @@
 
 class PostController extends Controller
 {
-    public function post(array $params=null){
+    public function index(array $params=null){
         return $this->view('blog.posts');
     }
     public function show(array $params=null){
-        return $this->view('blog.show',$params['id']);
+
+        $statement = $this->db->getPDO()->prepare("SELECT * FROM posts where posts.id = ?");
+        $statement->execute([$params['id']]);
+        $posts = $statement->fetch();
+        return $this->view('blog.show',$posts); 
     }
+
 }
