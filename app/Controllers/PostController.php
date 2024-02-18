@@ -5,14 +5,13 @@
 class PostController extends Controller
 {
     public function index(array $params=null){
-        return $this->view('blog.posts');
-    }
-    public function show(array $params=null){
+        $tree = $this->buildTree('ressource');
 
-        $statement = $this->db->getPDO()->prepare("SELECT * FROM posts where posts.id = ?");
-        $statement->execute([$params['id']]);
+        $statement = $this->db->getPDO()->prepare("SELECT * FROM posts WHERE slug=? AND type='ressource'");
+        $statement->execute([$params['ref']]);
         $posts = $statement->fetch();
-        return $this->view('blog.show',$posts); 
+
+        return $this->view('blog.posts',[$posts,$tree]);
     }
 
 }

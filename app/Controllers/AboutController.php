@@ -2,7 +2,10 @@
 
     namespace Controllers;
 
-class AboutController
+class AboutController extends Controller
 {
+    public function index(array $params=null){
+        return $this->view('blog.about',$params);
+    }
     
 }

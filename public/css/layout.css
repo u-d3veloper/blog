@@ -1,11 +1,53 @@
-.container{
+/* General structure of the layout */
+.struct{
+    display: flex;
+}
+
+/* Lateral navigation */
+.toggle-lateral-nav{
+    flex: 1 0 auto;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 300px;
+}
+.toggle-lateral-nav>ul>li{
+    list-style-type: none;
+    border-bottom: 0.2px solid #cdcbcb;
+    padding: 10px;
+}
+.toggle-lateral-nav li details summary{
+    font-size: 0.8em;
+    font-weight: bold;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+summary img{
+    width: 10px;
+}
+.toggle-lateral-nav li details>ul>li{
+    margin: 10px 0;
+    list-style-type: none;
+}
+.toggle-lateral-nav li details>ul>li>a{
+    text-decoration: none;
+    font-size: 0.8em;
+    color: #7b7b7b;
+    font-weight: 600;
+}
+/* Content of the page config */
+.content{
     box-sizing: border-box;
     width: 100%;
     margin: 20px 0;
-    padding: 0 20%;
-    display: flex;
-    justify-content: center;
+    padding: 0 40px;
 }
+.content>*{
+    margin-bottom: 20px;
+}
+
+/* Content of the page css */
+
 .article-display{
     width: 100%;
 }
@@ -13,12 +55,7 @@
     margin-bottom: 20px;
 }
 
-.definition{
-    background-color: #e9e9e9;
-    border-radius: 0.3em;
-    padding: 2%;
-}
-.definition>h3{
-    margin-bottom: 5px;
-    text-decoration: underline;
-}
+
+
+/* Courses view adaptation */
+

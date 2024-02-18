@@ -18,9 +18,9 @@
 
     $router->register('/',['Controllers\HomeController','index']);
     $router->register('/posts',['Controllers\PostController','index']);
-    $router->register('/show',['Controllers\PostController','show']);
     $router->register('/teaching',['Controllers\TeachingController','index']);
     $router->register('/about',['Controllers\AboutController','index']);
+    $router->register('/login',['Controllers\LoginController','form']);
 
 
     $request = new Request($_SERVER['REQUEST_URI']);
@@ -31,6 +31,7 @@
     }
     catch(RouteNotFoundException $e)
     {
+        // Mettre en forme l'erreur de route
         echo $e->getMessage();
     }
 
